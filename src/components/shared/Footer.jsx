@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram, ShieldCheck } from 'lucide-react';
+import { Phone, MapPin, ShieldCheck } from 'lucide-react';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -12,34 +11,31 @@ const Footer = () => {
 
                     {/* Brand Column */}
                     <div className="flex flex-col space-y-6">
-                        <Link to="/" className="inline-block">
+                        <a href="#home" className="inline-block">
                             <span className="font-heading font-extrabold text-3xl tracking-tight text-white">
                                 Apex<span className="text-[#22C55E]">Cleanouts</span>
                             </span>
-                        </Link>
+                        </a>
                         <p className="text-sm leading-relaxed text-white/70">
                             Belleville, Michigan’s premier full-service partner for fast, professional residential and commercial junk removal. Eco-conscious disposal guaranteed.
                         </p>
-                        <div className="flex space-x-4 pt-2">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#22C55E] hover:text-[#0a2918] transition-all">
-                                <Facebook size={18} />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#22C55E] hover:text-[#0a2918] transition-all">
-                                <Instagram size={18} />
-                            </a>
-                        </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
                         <h3 className="text-white font-heading font-bold text-lg mb-6">Quick Links</h3>
                         <ul className="space-y-3 text-sm">
-                            {['Home', 'About Us', 'Services', 'Our Work', 'Contact', 'Blog'].map((item) => (
-                                <li key={item}>
-                                    <Link to={`/${item.toLowerCase().replace(' ', '-')}`} className="hover:text-[#22C55E] transition-colors flex items-center group">
+                            {[
+                                { name: 'Home', path: '#home' },
+                                { name: 'About Us', path: '#about' },
+                                { name: 'Services', path: '#services' },
+                                { name: 'Contact', path: '#contact' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <a href={item.path} className="hover:text-[#22C55E] transition-colors flex items-center group">
                                         <span className="w-0 h-0.5 bg-[#22C55E] mr-0 group-hover:w-3 group-hover:mr-2 transition-all"></span>
-                                        {item === 'Home' ? 'Home' : item.replace('home', '')}
-                                    </Link>
+                                        {item.name}
+                                    </a>
                                 </li>
                             ))}
                         </ul>
@@ -58,10 +54,10 @@ const Footer = () => {
                                 'Post-Construction',
                             ].map((service) => (
                                 <li key={service}>
-                                    <Link to="/services" className="hover:text-[#22C55E] transition-colors flex items-center group">
+                                    <a href="#services" className="hover:text-[#22C55E] transition-colors flex items-center group">
                                         <span className="w-0 h-0.5 bg-[#22C55E] mr-0 group-hover:w-3 group-hover:mr-2 transition-all"></span>
                                         {service}
-                                    </Link>
+                                    </a>
                                 </li>
                             ))}
                         </ul>
@@ -78,12 +74,7 @@ const Footer = () => {
                                     <span className="text-white/50 text-xs mt-1 block">24/7 Emergency Service</span>
                                 </a>
                             </li>
-                            <li className="flex items-center">
-                                <Mail size={18} className="text-[#22C55E] mr-3 flex-shrink-0" />
-                                <Link to="/contact" className="hover:text-white transition-colors">
-                                    Contact Form
-                                </Link>
-                            </li>
+
                             <li className="flex items-start">
                                 <MapPin size={18} className="text-[#22C55E] mt-0.5 mr-3 flex-shrink-0" />
                                 <span className="leading-snug">
@@ -128,13 +119,8 @@ const Footer = () => {
                         &copy; {currentYear} Apex Cleanout Solutions. All Rights Reserved.
                     </div>
 
-                    <div className="flex space-x-4">
-                        <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-                    </div>
-
-                    <div className="font-mono pt-2 md:pt-0">
-                        Made with <span className="text-red-500">♥️</span> by <a href="https://slabflow.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-white/20 underline-offset-4">Slabflow</a>
+                    {/* Made with... */}
+                    <div className="hidden font-mono pt-2 md:pt-0">
                     </div>
                 </div>
             </div>

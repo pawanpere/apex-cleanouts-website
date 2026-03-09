@@ -68,7 +68,7 @@ const ServicesGrid = () => {
     }, []);
 
     return (
-        <section className="py-24 bg-[#F8F9FA] relative">
+        <section id="services" className="py-24 bg-[#F8F9FA] relative">
             <div className="max-w-7xl mx-auto px-4 md:px-8">
 
                 {/* Header */}
@@ -107,13 +107,13 @@ const ServicesGrid = () => {
                                     {service.desc}
                                 </p>
 
-                                <Link
-                                    to={`/services/${service.slug}`}
+                                <a
+                                    href="#contact"
                                     className="inline-flex items-center text-[#22C55E] font-bold text-sm tracking-wide group/link uppercase mt-auto w-fit"
                                 >
-                                    <span className="border-b-2 border-transparent group-hover/link:border-[#22C55E] pb-0.5 transition-all">Learn More</span>
+                                    <span className="border-b-2 border-transparent group-hover/link:border-[#22C55E] pb-0.5 transition-all">Call Now</span>
                                     <ArrowRight size={16} className="ml-2 group-hover/link:translate-x-1 transition-transform" />
-                                </Link>
+                                </a>
                             </div>
                         );
                     })}
@@ -121,12 +121,12 @@ const ServicesGrid = () => {
 
                 {/* Bottom CTA */}
                 <div className="mt-16 text-center">
-                    <Link
-                        to="/services"
+                    <a
+                        href="#services"
                         className="inline-flex items-center justify-center bg-white border-2 border-slate-200 text-[#1E293B] px-8 py-4 rounded-full font-bold tracking-wide hover:border-[#0F3D24] hover:bg-[#0F3D24] hover:text-white transition-all btn-magnetic shadow-sm"
                     >
-                        View All Services
-                    </Link>
+                        Back to Top Services
+                    </a>
                 </div>
 
             </div>

@@ -33,14 +33,14 @@ const ServiceAreas = () => {
 
                 <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-3 md:gap-4">
                     {cities.map((city, index) => (
-                        <Link
+                        <a
                             key={index}
-                            to={`/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                            href="#contact"
                             className="inline-flex items-center px-4 md:px-6 py-3 bg-white border border-slate-200 rounded-full hover:border-[#22C55E] hover:shadow-md transition-all text-[#1E293B] font-bold text-sm"
                         >
                             <MapPin size={16} className="text-[#22C55E] mr-2" />
                             {city}, MI
-                        </Link>
+                        </a>
                     ))}
                 </div>
 

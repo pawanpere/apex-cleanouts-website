@@ -10,10 +10,7 @@ import PortfolioPreview from '../components/home/PortfolioPreview';
 import FAQ from '../components/home/FAQ';
 import ServiceAreas from '../components/home/ServiceAreas';
 import CTABanner from '../components/shared/CTABanner';
-import { useOutletContext } from 'react-router-dom';
-
 const Home = () => {
-    const { openPopup } = useOutletContext();
 
     // Scroll to top on mount
     useEffect(() => {
@@ -33,7 +30,7 @@ const Home = () => {
             <PortfolioPreview />
             <FAQ />
             <ServiceAreas />
-            <CTABanner onQuoteClick={openPopup} />
+            <CTABanner />
         </div>
     );
 };

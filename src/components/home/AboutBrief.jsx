@@ -46,7 +46,7 @@ const AboutBrief = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-24 bg-slate-900 relative overflow-hidden text-white">
+        <section id="about" ref={sectionRef} className="py-24 bg-slate-900 relative overflow-hidden text-white">
             <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -132,10 +132,10 @@ const AboutBrief = () => {
                         </div>
 
                         <div className="about-text">
-                            <Link to="/about" className="inline-flex items-center font-bold text-white hover:text-[#4ADE80] transition-colors group text-lg tracking-wide border-b border-transparent hover:border-[#4ADE80] pb-1">
-                                Read Our Full Story
+                            <a href="#contact" className="inline-flex items-center font-bold text-white hover:text-[#4ADE80] transition-colors group text-lg tracking-wide border-b border-transparent hover:border-[#4ADE80] pb-1">
+                                Get In Touch
                                 <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Link>
+                            </a>
                         </div>
 
                     </div>

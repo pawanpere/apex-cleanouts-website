@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, Facebook, Instagram } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 const TopUtilityBar = () => {
     return (
@@ -11,11 +11,6 @@ const TopUtilityBar = () => {
                         <Phone size={14} className="group-hover:text-[#22C55E]" />
                         <span>(734) 486-5987</span>
                     </a>
-                    <span className="text-white/30 hidden lg:inline">|</span>
-                    <a href="/contact" className="hidden lg:flex items-center space-x-2 hover:text-[#22C55E] transition-colors group">
-                        <Mail size={14} className="group-hover:text-[#22C55E]" />
-                        <span>Contact Us Online</span>
-                    </a>
                 </div>
 
                 {/* Center: Trust Statement */}
@@ -23,15 +18,7 @@ const TopUtilityBar = () => {
                     Eco-Conscious Disposal • Fast Response
                 </div>
 
-                {/* Right Cluster: Social Links */}
-                <div className="flex items-center space-x-4">
-                    <a href="#" className="hover:text-[#22C55E] transition-colors" aria-label="Facebook">
-                        <Facebook size={16} />
-                    </a>
-                    <a href="#" className="hover:text-[#22C55E] transition-colors" aria-label="Instagram">
-                        <Instagram size={16} />
-                    </a>
-                </div>
+
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import clsx from 'clsx';
 
-const Navbar = ({ onQuoteClick }) => {
+const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
@@ -23,10 +23,10 @@ const Navbar = ({ onQuoteClick }) => {
     }, [location.pathname]);
 
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'Services', path: '/services', hasDropdown: true },
-        { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'Home', path: '#home' },
+        { name: 'Services', path: '#services' },
+        { name: 'About', path: '#about' },
+        { name: 'Contact', path: '#contact' },
     ];
 
     return (
@@ -51,26 +51,26 @@ const Navbar = ({ onQuoteClick }) => {
                 <nav className="hidden lg:flex items-center space-x-8">
                     {navLinks.map((link) => (
                         <div key={link.name} className="relative group">
-                            <Link
-                                to={link.path}
+                            <a
+                                href={link.path}
                                 className="text-white/90 hover:text-white font-medium flex items-center transition-colors text-sm uppercase tracking-wide"
                             >
                                 {link.name}
-                                {link.hasDropdown && <ChevronDown size={14} className="ml-1 opacity-70 group-hover:opacity-100" />}
-                            </Link>
+                            </a>
                         </div>
                     ))}
                 </nav>
 
                 {/* CTA Button & Mobile Toggle */}
                 <div className="flex items-center space-x-4 z-50">
-                    <button
-                        onClick={onQuoteClick}
-                        className="hidden md:flex btn-magnetic bg-[#22C55E] text-[#0a2918] px-6 py-2.5 rounded-full font-bold text-sm tracking-wide overflow-hidden relative group"
+                    <a
+                        href="tel:7344865987"
+                        className="hidden md:flex btn-magnetic bg-[#22C55E] text-[#0a2918] px-6 py-2.5 rounded-full font-bold text-sm tracking-wide overflow-hidden relative group items-center"
                     >
-                        <span className="relative z-10">GET A FREE QUOTE</span>
+                        <Phone size={16} className="mr-2" />
+                        <span className="relative z-10">CALL NOW</span>
                         <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
-                    </button>
+                    </a>
 
                     {/* Mobile phone button (always visible on mobile) */}
                     <a
@@ -101,28 +101,26 @@ const Navbar = ({ onQuoteClick }) => {
             >
                 <div className="flex flex-col space-y-6 text-2xl font-heading font-bold">
                     {navLinks.map((link) => (
-                        <Link
+                        <a
                             key={link.name}
-                            to={link.path}
+                            href={link.path}
+                            onClick={() => setIsMobileMenuOpen(false)}
                             className="text-white hover:text-[#22C55E] transition-colors"
                         >
                             {link.name}
-                        </Link>
+                        </a>
                     ))}
                     <div className="pt-8 border-t border-white/10 flex flex-col space-y-4">
                         <a href="tel:7344865987" className="text-white text-xl flex items-center">
                             <Phone size={24} className="text-[#22C55E] mr-3" />
                             (734) 486-5987
                         </a>
-                        <button
-                            onClick={() => {
-                                setIsMobileMenuOpen(false);
-                                onQuoteClick();
-                            }}
-                            className="w-full bg-[#22C55E] text-[#0a2918] text-center py-4 rounded-xl font-bold uppercase tracking-wide mt-4"
+                        <a
+                            href="tel:7344865987"
+                            className="w-full bg-[#22C55E] text-[#0a2918] text-center py-4 rounded-xl font-bold uppercase tracking-wide mt-4 block"
                         >
-                            Get A Free Quote
-                        </button>
+                            Call Now
+                        </a>
                     </div>
                 </div>
             </div>
