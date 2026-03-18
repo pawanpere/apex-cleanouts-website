@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Mail, MessageCircle } from 'lucide-react';
 import clsx from 'clsx';
 
 const Navbar = () => {
@@ -42,9 +42,11 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <Link to="/" className="flex items-center group relative z-50">
-                    <span className="font-heading font-extrabold text-xl tracking-tight text-white">
-                        Apex<span className="text-[#22C55E]">Cleanout</span><span className="text-white/90 font-light">Solutions</span>
-                    </span>
+                    <img
+                        src="/images/apex-logo.png"
+                        alt="Apex Cleanout Solutions"
+                        className="h-12 md:h-14 w-auto"
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -114,6 +116,14 @@ const Navbar = () => {
                         <a href="tel:7344865987" className="text-white text-xl flex items-center">
                             <Phone size={24} className="text-[#22C55E] mr-3" />
                             (734) 486-5987
+                        </a>
+                        <a href="mailto:apolocoser5@gmail.com" className="text-white text-lg flex items-center">
+                            <Mail size={22} className="text-[#22C55E] mr-3" />
+                            apolocoser5@gmail.com
+                        </a>
+                        <a href="sms:7344865987" className="text-white text-lg flex items-center">
+                            <MessageCircle size={22} className="text-[#22C55E] mr-3" />
+                            Text Us
                         </a>
                         <a
                             href="tel:7344865987"

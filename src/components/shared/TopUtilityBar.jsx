@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
+import { Phone, Mail, MessageCircle } from 'lucide-react';
 
 const TopUtilityBar = () => {
     return (
@@ -11,6 +11,10 @@ const TopUtilityBar = () => {
                         <Phone size={14} className="group-hover:text-[#22C55E]" />
                         <span>(734) 486-5987</span>
                     </a>
+                    <a href="mailto:apolocoser5@gmail.com" className="flex items-center space-x-2 hover:text-[#22C55E] transition-colors group">
+                        <Mail size={14} className="group-hover:text-[#22C55E]" />
+                        <span>apolocoser5@gmail.com</span>
+                    </a>
                 </div>
 
                 {/* Center: Trust Statement */}
@@ -18,7 +22,11 @@ const TopUtilityBar = () => {
                     Eco-Conscious Disposal • Fast Response
                 </div>
 
-
+                {/* Right: Message Us */}
+                <a href="sms:7344865987" className="flex items-center space-x-2 hover:text-[#22C55E] transition-colors group">
+                    <MessageCircle size={14} className="group-hover:text-[#22C55E]" />
+                    <span className="font-bold">Message Us</span>
+                </a>
             </div>
         </div>
     );

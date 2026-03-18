@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, ShieldCheck } from 'lucide-react';
+import { Phone, MapPin, ShieldCheck, Mail, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -12,9 +12,11 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="flex flex-col space-y-6">
                         <a href="#home" className="inline-block">
-                            <span className="font-heading font-extrabold text-3xl tracking-tight text-white">
-                                Apex<span className="text-[#22C55E]">Cleanouts</span>
-                            </span>
+                            <img
+                                src="/images/apex-logo.png"
+                                alt="Apex Cleanout Solutions"
+                                className="h-20 w-auto"
+                            />
                         </a>
                         <p className="text-sm leading-relaxed text-white/70">
                             Belleville, Michigan’s premier full-service partner for fast, professional residential and commercial junk removal. Eco-conscious disposal guaranteed.
@@ -72,6 +74,20 @@ const Footer = () => {
                                 <a href="tel:7344865987" className="hover:text-white transition-colors">
                                     (734) 486-5987<br />
                                     <span className="text-white/50 text-xs mt-1 block">24/7 Emergency Service</span>
+                                </a>
+                            </li>
+
+                            <li className="flex items-start">
+                                <Mail size={18} className="text-[#22C55E] mt-0.5 mr-3 flex-shrink-0" />
+                                <a href="mailto:apolocoser5@gmail.com" className="hover:text-white transition-colors">
+                                    apolocoser5@gmail.com
+                                </a>
+                            </li>
+
+                            <li className="flex items-start">
+                                <MessageCircle size={18} className="text-[#22C55E] mt-0.5 mr-3 flex-shrink-0" />
+                                <a href="sms:7344865987" className="hover:text-white transition-colors">
+                                    Text Us a Message
                                 </a>
                             </li>
 
