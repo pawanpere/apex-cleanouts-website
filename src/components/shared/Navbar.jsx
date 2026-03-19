@@ -45,7 +45,7 @@ const Navbar = () => {
                     <img
                         src="/images/apex-logo.png"
                         alt="Apex Cleanout Solutions"
-                        className="h-12 md:h-14 w-auto"
+                        className="h-16 md:h-20 w-auto"
                     />
                 </Link>
 
